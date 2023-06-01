@@ -41,7 +41,7 @@ func (h *FileHandler) SaveFile(c *gin.Context) {
 		config.Logger.Error("Couldn't have read a file", zap.String("err", err.Error()))
 		c.JSON(409, "Error while reading a file")
 	}
-
+	h.service.SaveParts(bytesReceived)
 	c.JSON(200, "Fetched file")
 }
 
