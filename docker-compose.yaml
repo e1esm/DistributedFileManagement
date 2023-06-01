@@ -1,0 +1,11 @@
+version: "3"
+services:
+  file-server:
+    container_name: file-server
+    build:
+      dockerfile: entryServer.dockerfile
+      context: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
